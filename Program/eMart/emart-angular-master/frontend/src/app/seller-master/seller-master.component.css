@@ -1,0 +1,104 @@
+body {
+    /* background-color: #F3F3F3; */
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+}
+
+.context-box {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#file {
+    font-size: 0px;
+    opacity: 10;
+    filter: alpha(opacity=0);
+}
+
+.right-box {
+    margin-left: 2px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.item-content {
+    position: relative;
+    left: 30%;
+    height: auto;
+    margin-top: 50px;
+}
+
+.item-content>div {
+    margin: 10px 0;
+}
+
+.item-content>div>label {
+    text-align: right;
+    padding: 9px 10px;
+    width: 160px;
+    color: #666666;
+}
+
+.item-content>div>button {
+    margin-left: 15%;
+}
+
+select,
+input {
+    height: 30px;
+    width: 180px;
+}
+
+select, input{
+    height: 38px;
+    width: 260px;
+}
+.w-btn-save{
+    height: 33px;
+    width: 124px;
+}
+.table thead{
+    background-color: #337ab7;
+    color: #ffffff;
+}
+
+.table-hover > tbody > tr:hover{
+    background-color: #3f93dd67;
+    color: #ffffff;
+}
+#addSubcategory,#veiwItem,#reports{
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td{
+    border:0;
+}
+
+.table > tbody > tr > td{
+    /* padding-bottom: 0; */
+}
+
+.table-striped > tbody > tr{
+    background-color: #ffffff;
+}
+
+.nav-tabs > li > a{
+    color: #333333;
+}
+
+.nav > li > a:hover{
+    background-color: #3f93dd67;
+    color: #ffffff;
+}
+
+/* @media (max-width: @screen-xs-max) { */
+
+@media screen and (max-width: 767px) {}
+
+@media screen and (min-width: 767px) {}

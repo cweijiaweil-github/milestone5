@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>signup</title>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="form-box col-lg-4 col-lg-offset-4 col-md-5 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1" style="height: auto !important;">
+                <div class="formTop">
+                    <h2>welcome sign up</h2>
+                </div>
+                <div class="tab-group">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a id="a-buyer" href="#buyerContent" data-toggle="tab">Buyer</a></li>
+                        <li><a id="a-seller" href="#sellerContent" data-toggle="tab">Seller</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <!-- buyer sign up -->
+                    <div class="tab-pane active" id="buyerContent">
+                        <app-buyer></app-buyer>
+                    </div>
+                    <!-- seller sign up -->
+                    <div class="tab-pane" id="sellerContent">
+                        <app-seller></app-seller>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+  {
+    "/apiuser": {
+      "target": "http://127.0.0.1:8090/user-service",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/apiuser": ""
+      }
+    },
+    "/apibuyer": {
+      "target": "http://127.0.0.1:8090/buyer-service",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/apibuyer": ""
+      }
+    },
+    "/apiseller": {
+      "target": "http://127.0.0.1:8090/seller-service",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/apiseller": ""
+      }
+    }
+  }

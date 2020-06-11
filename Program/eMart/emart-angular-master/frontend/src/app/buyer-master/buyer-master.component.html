@@ -1,0 +1,244 @@
+<div class="row context-box ">
+    <input class="nodisplay" #inputBuyerId type="text" value="{{buyerId}}">
+    <form #filerForm="ngForm" >
+    <div class="left-box">
+            <div class="left-box-ch">
+                <div class="row">
+                    <div class="dv-margin-tb dv-padding-r">
+                        <div class="dv-flex">
+                            <p>Start Price: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                            <input name="startPrice" [(ngModel)]="startPrice" type="text" class="left-input">
+                        </div>
+                    </div>
+                    <!-- display not = xs -->
+                    <div class="row hidden-xs dv-padding-lr">
+                        <div class="dv-margin-tb col-xs-6 col-sm-12">
+                            <div class="dv-flex">
+                                <p>End Price:&nbsp;</p>
+                                <input name="endPrice" [(ngModel)]="endPrice" type="text" class="left-input">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- display = xs -->
+                    <div class="hidden-sm hidden-md hidden-lg">
+                        <div class="dv-margin-tb col-xs-6 col-sm-12">
+                            <div class="dv-flex">
+                                <p>End Price:&nbsp;</p>
+                                <input name="endPrice" [(ngModel)]="endPrice" type="text" class="left-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="dv-margin-tb">
+                        <div class="dv-flex">
+                            <p>Manufacturer:&nbsp;</p>
+                            <div class="dropdown">
+                                <a id="dLabel" role="button" class="btn btn-primary" data-toggle="dropdown"
+                                    data-target="#" href="javascript:;"><span id="select-title">category &nbsp;</span>
+                                    <span class="caret"></span></a>
+                                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                    <!-- <li *ngFor="let category of categorys;index as i" ><a href="javascript:;" data-index="1" data-title="一级菜单">{{category.category_name}}</a></li> -->
+                                    <li *ngFor="let category of categorys" class="dropdown-submenu">
+                                        <a href="javascript:;" data-index="2"
+                                            data-title="firstmenu">{{category.category_name}}</a>
+                                        <ul *ngIf="category.subCategorys.length>0" class="dropdown-menu">
+                                            <li *ngFor="let subCategory of category.subCategorys">
+                                                <a (click)="selSubCategory(category,subCategory)" data-index="2-1"
+                                                    href="javascript:;"
+                                                    data-title="secondmenu">{{subCategory.subCategory_name}}</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-xs-12 selres1">{{category}}</div>
+                <div class="row col-xs-12 selres2">{{subCategory}}</div>
+                <div class="row">
+                    <div class="col-xs-3 col-sm-11 col-xs-offset-1 dv-margin-tb-x2">
+                        <button class="btn btn-primary left-btn" (click)="clearData()">Reset</button>
+                    </div>
+                    <div class="col-xs-3 col-sm-11 col-xs-offset-1 dv-margin-tb-x2">
+                        <button (click)="findItemsByPriceAndFacturer()"
+                            class="btn btn-primary btn-block left-btn">Filler</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="right-box">
+        <div class="shopping-cart" data-target=".bd-example-modal-lg" data-toggle="modal">
+            <img  (click)="findAllCar()"
+                src="assets/icon/cart.png" alt="To shopping cart" />
+        </div>
+        <div class="tab-group">
+            <ul class="nav nav-tabs">
+                <li class="active"><a id="a-buyer" (click)="findAllItems()" href="#buyItem" data-toggle="tab"><span
+                            class="hidden-xs">Buy
+                            Item</span><i class="hidden-sm hidden-md hidden-lg glyphicon glyphicon-home"></i></a>
+                </li>
+                <li>
+                    <a id="a-purchaseHistory" (click)="findAllHistory()" href="#purchaseHistory" data-toggle="tab"><span
+                            class="hidden-xs">Purchase
+                            History</span><i
+                            class="hidden-sm hidden-md hidden-lg glyphicon glyphicon glyphicon-time"></i></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-pane active " id="buyItem">
+                <form #searchForm="ngForm" (ngSubmit)="findItemsByName(searchForm.value)">
+                <div class="item-search">
+                        <div class="form-group">
+                            <input name="item_name" ngModel type="text" class="form-control" placeholder="item name">
+                        </div>
+                        <button type="submit" class="btn btn-primary">search</button>
+                    </div>
+                </form>
+                <div class="">
+                    <h4><b>Search Results</b></h4>
+                </div>
+                <div class="item-content">
+                    <!-- item Search Results -->
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>item_name</th>
+                                <th>price</th>
+                                <th>description</th>
+                                <th>category</th>
+                                <th>subCategory</th>
+                                <th>seller</th>
+                                <th>view</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of itemList;index as i">
+                                <td>{{i+1}}</td>
+                                <td>{{item.item_name}}</td>
+                                <td>{{item.price}}</td>
+                                <td>{{item.description}}</td>
+                                <td>{{item.category_name}}</td>
+                                <td>{{item.sub_category_name}}</td>
+                                <td>{{item.seller_id}}</td>
+                                <td>
+                                    <input class="nodisplay" #inputSubCategoryId type="text" value="{{item.sub_category_id}}">
+                                    <a class="" (click)="viewDetails(inputSubCategoryId.value)" >
+                                        <img class="iconimg" src="assets/icon/view.png"
+                                            alt=""></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- item specifications -->
+                <div class="row specifications">
+                    <div class="row item-title">
+                        <a (click)="retSearchRel()"><i class="glyphicon glyphicon-chevron-left">Back</i></a>
+                        <div></div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div id="imgCircle" class="row carousel slide" data-ride="carousel" data-interval="3000">
+                            <!-- 轮播（Carousel）指标 -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#imgCircle" data-slide-to="0" class="active"></li>
+                                <li data-target="#imgCircle" data-slide-to="1"></li>
+                                <li data-target="#imgCircle" data-slide-to="2"></li>
+                            </ol>
+                            <!-- 轮播（Carousel）项目 -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="img-thumbnail" src="assets/image/img1.jpg" alt="First slide">
+                                </div>
+                                <div class="item">
+                                    <img class="img-thumbnail" src="assets/image/img2.jpg" alt="Second slide">
+                                </div>
+                                <div class="item">
+                                    <img class="img-thumbnail" src="assets/image/img3.jpg" alt="Second slide">
+                                </div>
+                            </div>
+                            <!-- 轮播（Carousel）导航：就是左右箭头，可省略 -->
+                            <a class="carousel-control left" href="#imgCircle" data-slide="prev">
+                                <i class="glyphicon glyphicon-menu-left"></i>
+                            </a>
+                            <a class="carousel-control right" href="#imgCircle" data-slide="next">
+                                <i class="glyphicon glyphicon-menu-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-7"  *ngFor="let item of subCategoryList">
+                        <div class="">
+                           <h1><span>{{item.sub_category_name}}</span><span>'s information</span></h1> 
+                        </div>
+                        <div class="res-centent " >
+                            <div>
+                                <span>Price</span><span>{{item.price}}</span>
+                            </div>
+                            <div>
+                                <span>Seller</span><span>{{item.seller_id}}</span>
+                            </div>
+                            <div>
+                                <span>Network Type</span><span>{{item.nettwork_type}}</span>
+                            </div>
+                            <div>
+                                <span>Memory Storage</span><span>{{item.memory_storage}}</span>
+                            </div>
+                            <div>
+                                <span>Cameras</span><span>{{item.cameras}}</span>
+                            </div>
+                            <div>
+                                <span>OS Version</span><span>{{item.os_version}}</span>
+                            </div>
+                            <div class="btn-caout">
+                                <input class="nodisplay" #inputItemId type="text" value="{{item.item_id}}">
+                                <input class="nodisplay" #inputItemName type="text" value="{{item.item_name}}">
+                                <input class="nodisplay" #inputprice type="text" value="{{item.price}}">
+                                <button class="btn btn-primary btn-car" (click)="addToCart(inputItemId.value,inputItemName.value,inputprice.value)">Add to Cart</button>
+                                <button class="btn btn-primary" (click)="checkOut()">Check out</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="purchaseHistory">
+                <!-- purchaseHistory -->
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>item_name</th>
+                            <th>price</th>
+                            <th>description</th>
+                            <th>date</th>
+                            <th>view</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let history of historys;index as i">
+                            <td>{{i+1}}</td>
+                            <td>{{history.item_name}}</td>
+                            <td>{{history.price}}</td>
+                            <td>{{history.description}}</td>
+                            <td>{{history.date_time | date:'yyyy-MM-dd'}}</td>
+                            <td>
+                                <a class="" (click)="viewDetails('aaaa')"><img class="iconimg" src="assets/icon/view.png"
+                                        alt=""></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- shopping car modle -->
+<div aria-hidden="true" aria-labelledby="myLargeModalLabel" class="modal fade bd-example-modal-lg" role="dialog"
+    tabindex="-1">
+    <app-cart #cartComponent></app-cart>
+</div>

@@ -1,0 +1,320 @@
+body {
+    /* background-color: #F3F3F3; */
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+}
+
+.w-nav {
+    display: flex;
+    height: 60px;
+    background-color: #3B95D3
+}
+
+.nav-logo {
+    position: relative;
+    left: 30px;
+}
+
+.nav-logo>p {
+    display: block;
+    font-size: 40px;
+}
+
+.nav-sign {
+    /* position: relative;
+    right: 0px; */
+    position: absolute;
+    right: 30px;
+    display: flex;
+    margin-top: 10px;
+}
+
+.nav-login {
+    margin-right: 10px;
+}
+
+.nav-login>button {
+    width: 80px;
+}
+
+.nav-signup {
+    margin: 0 10px;
+}
+
+.nav-signup>button {
+    width: 80px;
+}
+
+.nav-logout {
+    margin-top: 5px;
+}
+
+.nav-logout>a {
+    color: #fff;
+    font-size: 20px;
+}
+
+.nav-logout>a:hover {
+    color: rgb(43, 56, 68);
+}
+
+.w-hi {
+    font-size: 30px;
+    margin: 0 15px;
+}
+
+.sudel {
+    height: 34px;
+}
+
+.context-box {
+    /* height: 750px; */
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.left-box {
+    height: 100%;
+    border: 1px solid #d4d4d4;
+}
+
+.right-box {
+    margin-left: -2px;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #d4d4d4;
+}
+
+.dv-flex {
+    display: flex;
+}
+
+.dv-margin-tb {
+    margin: 5px 0px;
+}
+
+.dv-margin-tb-x2 {
+    margin: 10px 0px;
+}
+
+.dv-margin-lr {
+    margin: 0px 5px;
+}
+
+.dv-padding-lr {
+    padding: 0 15px;
+}
+
+.dv-magin-t {
+    margin-top: 15px;
+}
+
+.tab-group {
+    margin-top: 10px;
+}
+
+.shopping-cart {
+    z-index: 11;
+    position: absolute;
+    right: 50px;
+    top: 20px;
+}
+
+.shopping-cart>img {
+    height: 50px;
+    width: 50px;
+    transition: all 0.6s;
+}
+
+.shopping-cart:hover {
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    transform: scale(1.4);
+}
+
+.item-search {
+    display: flex;
+    margin-left: 30%;
+    margin-top: 10px;
+}
+
+.item-search>button {
+    height: 34px;
+    margin: 0 10px;
+}
+
+.item-content {
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.item-content>table {
+    /* overflow-y: scroll; */
+}
+
+.item-nav {
+    position: relative;
+    left: 50%;
+    bottom: 10px;
+}
+
+.specifications {
+    display: none;
+}
+
+.item-title {
+    margin: 10px 30px;
+}
+
+.item-title>div {
+    border-bottom: 1px rgba(204, 194, 194, 0.986) solid;
+}
+
+.img-thumbnail {
+    padding: 0;
+    margin-left: 5px;
+    border: none;
+    max-height: 560px;
+}
+
+
+/* updated delete */
+
+
+/* .item-content {
+    display: none;
+} */
+
+.carousel-indicators {
+    position: absolute;
+    top: 80%;
+}
+
+.carousel-inner .item>img {
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-control {
+    height: 100%;
+    background-image: none;
+}
+
+.carousel-control.left>i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+}
+
+.carousel-control.right>i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+}
+
+.glyphicon-menu-left,
+.glyphicon-menu-right {
+    color: red;
+}
+
+.res-centent>div {
+    margin: 15px 0;
+}
+
+.res-centent>div>span:first-child {
+    font-size: 12px;
+    color: rgb(27, 26, 26);
+    text-align: left;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.res-centent>div>span:last-child {
+    border: #979494 1.5px solid;
+    padding: 5px 10px;
+}
+
+.btn-caout {
+    padding-top: 30px;
+}
+
+.btn-car {
+    margin-right: 40px;
+}
+.w-nav{
+    background-color: #337ab7;
+}
+.aaa{
+    font-size: 20px;
+}
+
+/* @media (max-width: @screen-xs-max) { */
+
+@media screen and (max-width: 767px) {
+    .nav-sign {
+        margin-top: 10px;
+    }
+    .left-box {
+        height: 20%;
+        border: 2px rgb(196, 124, 30) solid;
+    }
+    .right-box {
+        height: 82%;
+        border: 2px rgb(62, 197, 186) solid;
+    }
+    .dv-padding-r {
+        padding-right: 0px;
+    }
+    .left-input {
+        width: 60px;
+    }
+    .tab-group>ul>li {
+        width: 80px;
+    }
+    .left-btn {
+        width: 90px;
+    }
+    .shopping-cart {
+        z-index: 11;
+        position: fixed;
+        right: 110px;
+        top: 15px;
+    }
+    .shopping-cart>img {
+        height: 30px;
+        width: 30px;
+        transition: all 0.6s;
+    }
+    .shopping-cart:hover {
+        height: 35px;
+        width: 35px;
+        cursor: pointer;
+        transform: scale(1.4);
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .left-input {
+        width: 80%;
+        height: 34px;
+    }
+    .dv-flex {
+        display: block;
+    }
+    .left-box-ch {
+        position: absolute;
+        left: 20%;
+    }
+    .left-btn {
+        width: 90%;
+        height: 40px;
+        vertical-align: middle;
+        text-align: center;
+    }
+}

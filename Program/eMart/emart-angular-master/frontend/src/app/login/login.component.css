@@ -1,0 +1,134 @@
+        html,
+        body {
+            background-image: url('/assets/image/login2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 0px -60px;
+            height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .logo {
+            height: 80px;
+            padding-top: 15px;
+            text-align: center;
+            color: rgb(10, 148, 240);
+        }
+
+        .logo>p {
+            font-size: 40px;
+        }
+
+        .signup a {
+            color: #337ab7 !important;
+        }
+
+        .signup a:hover {
+            color: #286090 !important;
+        }
+
+        .w-box {
+            height: 370px;
+            background-color: #FFFFFF;
+            border-radius: 25px;
+            margin-bottom: 60px;
+            box-shadow: 11px 15px 14px rgba(30, 113, 172, 0.705);
+        }
+
+        .input-group-addon {
+            background-color: #337ab7;
+            color: azure;
+        }
+
+        .formTop {
+            text-align: center;
+            color: #3B95D3;
+        }
+
+        .formContent {
+            padding-top: 20px;
+        }
+
+        .valia {
+            height: 10px;
+            text-align: left;
+            padding-left: 5px;
+        }
+
+        .endBox {
+            background-color: #F3F3F3;
+        }
+
+        .endBox p {
+            position: absolute;
+            left: 40%;
+            bottom: 10vh;
+            color: #000000;
+            font-size: 20px;
+        }
+
+        .loginbtn {
+            margin-top: 40px;
+        }
+
+        .signup {
+            text-decoration: none;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+            text-align: right;
+        }
+
+        .signup>span {
+            font-size: 15px;
+        }
+
+        .signup>a {
+            text-decoration: none;
+        }
+
+        .signup>a:hover {
+            color: #00a0e9;
+            font-weight: bold;
+        }
+
+        .alert-danger {
+            background-color: initial;
+        }
+
+        .form-control {
+            height: auto;
+        }
+
+        input:hover {
+            border: #3B95D3 1px solid;
+        }
+
+        .w-box {
+            box-shadow: 2px 3px 5px #ccc;
+        }
+
+        @media screen and (min-width: 1700px) {
+            .container {
+                padding-top: 130px;
+            }
+
+            .logo {
+                height: 80px;
+                padding-top: 15px;
+                text-align: left;
+                color: rgb(10, 148, 240);
+            }
+
+            .w-box {
+                width: 20%;
+                background-color: #FFFFFF;
+                border-radius: 25px;
+                margin-bottom: 60px;
+                box-shadow: 11px 15px 14px rgba(30, 113, 172, 0.705);
+            }
+        }

@@ -1,0 +1,9 @@
+input:hover{
+    border: #3B95D3 1.5px solid;
+}
+.w-asterisk{
+    color: rgba(197, 31, 31, 0.651);
+}
+.nodisplay{
+    display: none;
+}

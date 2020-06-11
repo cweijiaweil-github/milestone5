@@ -1,0 +1,90 @@
+body {
+    background-image: url('/assets/image/login4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.container {
+    padding-top: 30px;
+    width: 100%;
+    height: 93vh;
+    overflow-y: scroll;
+}
+
+.logo {
+    height: 80px;
+    padding-top: 15px;
+    text-align: center;
+    color: rgb(25, 118, 180);
+}
+
+.logo>p {
+    font-size: 40px;
+}
+
+.w-box {
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    margin-top: 20px;
+    box-shadow: 16px 17px 19px rgb(19, 109, 173);
+}
+
+.input-group-addon {
+    background-color: #3B95D3;
+    color: azure;
+}
+
+.formTop {
+    text-align: center;
+    color: #3B95D3;
+}
+
+.formContent {
+    padding-top: 20px;
+}
+
+.valia {
+    height: 10px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.authCode {
+    width: 100px;
+}
+
+.endBox {
+    background-color: #F3F3F3;
+    height: 80px;
+}
+
+.endBox p {
+    position: absolute;
+    left: 40%;
+}
+
+.tab-group {
+    margin-bottom: 10px;
+    ;
+}
+
+.tab-group ul li a:hover {
+    background-color: rgba(17, 141, 223, 0.267);
+}
+
+.alert-danger {
+    background-color: initial;
+}
+
+.tab-pane form {
+    padding-bottom: 20px;
+}
+
+.form-box {
+    height: auto;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    margin-top: 20px;
+    box-shadow: 2px 3px 5px #ccc;
+}

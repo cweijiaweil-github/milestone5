@@ -1,0 +1,323 @@
+<div class="row context-box ">
+    <div class="right-box">
+        <div class="tab-group">
+            <ul class="nav nav-tabs">
+                <li class="active"><a id="a-seller" href="#addItem" data-toggle="tab"><label class="hidden-xs">Add
+                            Item</label><i class="hidden-sm hidden-md hidden-lg glyphicon glyphicon-home"></i></a>
+                </li>
+                <li><a id="b-seller" href="#addCategory" data-toggle="tab"><label class="hidden-xs">Add
+                            Category</label><i class="hidden-sm hidden-md hidden-lg glyphicon glyphicon-home"></i></a>
+                </li>
+                <li><a id="b-seller" href="#addSubcategory" data-toggle="tab"><label class="hidden-xs">Add
+                            Subcategory</label><i
+                            class="hidden-sm hidden-md hidden-lg glyphicon glyphicon-home"></i></a>
+                </li>
+                <li>
+                    <a id="c-seller" href="#veiwItem" (click)="veiwItem()" data-toggle="tab"><label class="hidden-xs">veiw
+                            Item</label><i
+                            class="hidden-sm hidden-md hidden-lg glyphicon glyphicon glyphicon-time"></i></a>
+                </li>
+                <li><a id="d-seller " href="#reports" data-toggle="tab"><label class="hidden-xs">Reports</label><i
+                            class="hidden-sm hidden-md hidden-lg glyphicon glyphicon-list-alt"></i></a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane active " id="addItem">
+                <form #addItemForm="ngForm" (ngSubmit)="addItem(addItemForm.value)">
+                    <div class="item-content">
+                        <div class="row">
+                            <label class="col-xs-2">Select Category</label>
+                            <select name="" id="" class="col-xs-1" (change)="getCategoryId($event.target.value);">
+                                <option value="">please select!</option>
+                                <option *ngFor="let list of categoryList index as i" value="{{list.categoryId}}">
+                                    {{list.category_name}}</option>
+                            </select>
+                        </div>
+                        <div class="row nodisplay">
+                            <label class="col-xs-2">categoryId</label>
+                            <input type="text" name="categoryId" [(ngModel)]="categoryId" class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">Select Subcategory</label>
+                            <select name="" id="" class="col-xs-1" (change)="getSubCategoryId($event.target.value);">
+                                <option value="">please select!</option>
+                                <option *ngFor="let list of subCategoryList index as i" value="{{list.subCategoryId}}">
+                                    {{list.subCategory_name}}</option>
+                            </select>
+                        </div>
+                        <div class="row nodisplay">
+                            <label class="col-xs-2">SubCategoryId</label>
+                            <input type="text" name="subcategoryId" [(ngModel)]="subcategoryId" class="col-xs-1">
+                        </div>
+                        <div class="row nodisplay">
+                            <label class="col-xs-2">sellerId</label>
+                            <input type="text" name='sellerId' [(ngModel)]="sellerId" class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">Item id</label>
+                            <input type="text" name="itemId" ngModel class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">Item name</label>
+                            <input type="text" name="item_name" ngModel class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">Price</label>
+                            <input type="text" name="price" ngModel class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">Stock No.</label>
+                            <input type="text" name="stock_number" ngModel class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-primary">
+                                Save & SellItem
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane" id="addCategory">
+                <form #addCategoryForm="ngForm" (ngSubmit)="addCategory(addCategoryForm.value)">
+                    <div class="item-content">
+                        <div class="row nodisplay">
+                            <label class="col-xs-2">sellerId</label>
+                            <input type="text" name='sellerId' [(ngModel)]="sellerId" class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">category_id</label>
+                            <input type="text" name='categoryId' ngModel class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">category_name</label>
+                            <input type="text" name='category_name' ngModel class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">brief_details</label>
+                            <input type="text" name='brief_details' ngModel class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-primary w-btn-save">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane" id="addSubcategory">
+                <form #addSubcategoryForm="ngForm" (ngSubmit)="addSubcategory(addSubcategoryForm.value)">
+                    <div class="item-content">
+                        <div class="row">
+                            <label class="col-xs-2">Select Category</label>
+                            <select name="" id="" class="col-xs-1" (change)="getCategoryId($event.target.value);">
+                                <option value="">please select!</option>
+                                <option *ngFor="let list of categoryList index as i" value="{{list.categoryId}}">
+                                    {{list.category_name}}</option>
+                            </select>
+                        </div>
+                        <div class="row nodisplay">
+                            <label class="col-xs-2">categoryId</label>
+                            <input type="text" name="categoryId" [(ngModel)]="categoryId" class="col-xs-1">
+                        </div>
+                        <div class="row nodisplay">
+                            <label class="col-xs-2">sellerId</label>
+                            <input type="text" name='sellerId' [(ngModel)]="sellerId" class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">subCategoryId</label>
+                            <input type="text" name="subCategoryId" ngModel class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">subCategory_name</label>
+                            <input type="text" name="subCategory_name" ngModel class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">brief_details</label>
+                            <input type="text" name="brief_details" ngModel class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">N/W Type</label>
+                            <input type="text" name="nw_type" ngModel class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">
+                                Memory Storage
+                            </label>
+                            <input type="text" name="memory_Storage" ngModel class="col-xs-1">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">Network Type</label>
+                            <input type="text" name="nettwork_type" ngModel class="col-xs-1"
+                                value="">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">Cameras</label>
+                            <input type="text" name="cameras" ngModel class="col-xs-1" value="">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">OS Version</label>
+                            <input type="text" name="os_version" ngModel class="col-xs-1" value="">
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-2">upload</label>
+                            <input id="lefile" type="file" class="btn-primary col-xs-1" multiple="multiple"
+                                accept="image/*" style="display:none">
+                            <div class=" input-append ">
+                                <input id="photoCover " class="input-large " type="text " style="height:30px; "
+                                    disabled>
+                                <a class="btn " onclick="$('input[id=lefile]').click(); ">Browse</a>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <button class="btn btn-primary w-btn-save">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane " id="veiwItem">
+                    <table class="table table-bordered table-striped table-hover ">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>item_name</th>
+                                <th>category_name</th>
+                                <th>subCategory_name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let list of itemList index as i">
+                                <td>{{i+1}}</td>
+                                <td>{{list.item_name}}</td>
+                                <td>{{list.category_name}}</td>
+                                <td>{{list.sub_category_name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+            <div class="tab-pane " id="reports">
+                <form #reportsForm="ngForm" (ngSubmit)="reports(reportsForm.value)">
+                    <table class="table table-bordered table-striped table-hover ">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>item_name</th>
+                                <th>category</th>
+                                <th>subcategory</th>
+                                <th>count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Tanmay</td>
+                                <td>iphone</td>
+                                <td>xiami</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Sachin</td>
+                                <td>iphone</td>
+                                <td>xiami</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Uma</td>
+                                <td>computer</td>
+                                <td>huawei</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Uma</td>
+                                <td>10212</td>
+                                <td>411027</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Uma</td>
+                                <td>10212</td>
+                                <td>411027</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Uma</td>
+                                <td>10212</td>
+                                <td>411027</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Uma</td>
+                                <td>10212</td>
+                                <td>411027</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Uma</td>
+                                <td>10212</td>
+                                <td>411027</td>
+                                <td>89</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Uma</td>
+                                <td>10212</td>
+                                <td>411027</td>
+                                <td>33</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Uma</td>
+                                <td>10212</td>
+                                <td>411027</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Uma</td>
+                                <td>10212</td>
+                                <td>411027</td>
+                                <td>77</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>Uma</td>
+                                <td>10212</td>
+                                <td>411027</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>Uma</td>
+                                <td>10212</td>
+                                <td>411027</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>Uma</td>
+                                <td>10212</td>
+                                <td>411027</td>
+                                <td>222</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>Uma</td>
+                                <td>10212</td>
+                                <td>411027</td>
+                                <td>3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

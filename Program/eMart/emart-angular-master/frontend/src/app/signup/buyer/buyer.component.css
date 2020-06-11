@@ -1,0 +1,61 @@
+.w-box {
+    height: auto;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    margin-top: 20px;
+    box-shadow: 16px 17px 19px rgb(19, 109, 173);
+}
+
+.input-group-addon {
+    background-color: #3B95D3;
+    color: azure;
+}
+
+.formContent {
+    padding-top: 20px;
+}
+
+.valia {
+    height: 10px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.authCode {
+    width: 100px;
+}
+
+.endBox {
+    background-color: #F3F3F3;
+    height: 80px;
+}
+
+.endBox p {
+    position: absolute;
+    left: 40%;
+    margin-top: 20px;
+}
+
+.tab-group ul li a:hover {
+    background-color: rgba(17, 141, 223, 0.267);
+}
+
+.alert-danger {
+    background-color: initial;
+}
+
+.tab-pane form {
+    padding-bottom: 20px;
+}
+
+.form-box {
+    height: auto;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    margin-top: 20px;
+    box-shadow: 2px 3px 5px #ccc;
+}
+
+.btn-block {
+    margin-bottom: 30px;
+}

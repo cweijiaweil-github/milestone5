@@ -1,0 +1,412 @@
+body {
+    /* background-color: #F3F3F3; */
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+}
+
+.w-nav {
+    display: flex;
+    height: 60px;
+    background-color: #3B95D3
+}
+
+.nav-logo {
+    position: relative;
+    left: 30px;
+}
+
+.nav-logo>p {
+    color: #fff813;
+    display: block;
+    font-size: 40px;
+}
+
+.nav-sign {
+    /* position: relative;
+    right: 0px; */
+    position: absolute;
+    right: 30px;
+    display: flex;
+    margin-top: 10px;
+}
+
+.nav-login {
+    margin-right: 10px;
+}
+
+.nav-login>button {
+    width: 80px;
+}
+
+.nav-signup {
+    margin: 0 10px;
+}
+
+.nav-signup>button {
+    width: 80px;
+}
+
+.nav-logout {
+    margin-top: 10px;
+}
+
+.nav-logout>a {
+    font-size: 15px;
+}
+
+.nav-logout>a:hover {
+    color: rgb(24, 24, 26);
+}
+
+.w-hi {
+    font-size: 30px;
+    margin: 0 15px;
+}
+
+.sudel {
+    height: 34px;
+}
+
+.context-box {
+    /* height: 750px; */
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.left-box {
+    position: absolute;
+    left: 0;
+    width: 205px;
+    height: calc(100% - 70px);
+    background-color: #ffffff;
+    border-right: 1px solid #9c9999;
+}
+
+.right-box {
+    margin-left: 205px;
+    padding-left: 20px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.dv-flex {
+    display: flex;
+}
+
+.dv-margin-tb {
+    margin: 5px 0px;
+}
+#dLabel{
+    padding-left: 0;
+    color: #333333;
+}
+
+.dv-margin-tb-x2 {
+    margin: 10px 0px;
+    padding-left: 0;
+}
+
+.dv-margin-lr {
+    margin: 0px 5px;
+}
+
+.dv-padding-lr {
+    
+}
+
+.dv-magin-t {
+    margin-top: 15px;
+}
+
+.tab-group {
+    margin-top: 10px;
+}
+
+.shopping-cartt {
+    z-index: 11;
+    position: absolute;
+    right: 50px;
+    top: 80px;
+}
+
+.shopping-cartt>img {
+    height: 50px;
+    width: 50px;
+    transition: all 0.6s;
+}
+
+.shopping-cartt:hover {
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    transform: scale(1.4);
+}
+
+.item-search {
+    display: flex;
+    margin-left: 30%;
+    margin-top: 10px;
+}
+
+.item-search>button {
+    height: 34px;
+    margin: 0 10px;
+}
+
+.item-content {
+    height: 300px;
+    overflow-y: scroll;
+}
+.modal-body{
+    height: 300px;
+    overflow-y: scroll;
+}
+.tab-pane{
+    height: 400px;
+    overflow-y: scroll;
+}
+.item-content>table {
+    /* overflow-y: scroll; */
+}
+
+.table{
+    margin-top: 20px;
+}
+
+.table thead{
+    background-color: #337ab7;
+    color: #ffffff;
+}
+
+.nav-tabs > li > a:hover{
+    background-color: #337ab7;
+    color: #ffffff;
+}
+
+.table-hover > tbody > tr:hover{
+    background-color: #3f93dd67;
+    color: #ffffff;
+}
+
+.item-nav {
+    position: relative;
+    left: 50%;
+    bottom: 10px;
+}
+.nav-tabs li a{
+    color: #333333;
+}
+
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td{
+    border:0;
+}
+
+.specifications {
+    display: none;
+}
+
+.item-title {
+    margin: 10px 30px;
+}
+
+.item-title>div {
+    border-bottom: 1px rgba(204, 194, 194, 0.986) solid;
+}
+
+.img-thumbnail {
+    padding: 0;
+    margin-left: 5px;
+    border: none;
+    max-height: 560px;
+}
+
+.modal-footer>.btn-delete {
+    margin-right: 30px;
+}
+.modal-footer>.leftdiv{
+    position: absolute;
+    left: 30px;
+    font-weight: bold;
+    line-height: 34px;
+}
+.modal-footer>.leftdiv>span:nth-child(2){
+    margin-right: 100px;
+
+}
+.modal-footer>.leftdiv>span{
+    margin-right: 10px;
+}
+.modal-content {
+    margin-top: 100px;
+}
+
+#savemodaLabel{
+    font-size: 18px;
+    font-weight: 500;
+}
+.selres1,.selres2{
+    height: 20px;
+    margin-top: 5px;
+    color:rgb(177, 177, 184);
+    text-align:center;
+}
+
+.cartousel-indicators {
+    position: absolute;
+    top: 80%;
+}
+
+.cartousel-inner .item>img {
+    height: 100%;
+    width: 100%;
+}
+
+.cartousel-control {
+    height: 100%;
+    background-image: none;
+}
+
+.cartousel-control.left>i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+}
+
+.cartousel-control.right>i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+}
+
+.glyphicon-menu-left,
+.glyphicon-menu-right {
+    color: red;
+}
+
+.res-centent>div {
+    margin: 15px 0;
+}
+
+.res-centent>div>span:first-child {
+    font-size: 12px;
+    color: rgb(27, 26, 26);
+    text-align: left;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.res-centent>div>span:last-child {
+    border: #979494 1.5px solid;
+    padding: 5px 10px;
+}
+
+.btn-caout {
+    padding-top: 30px;
+}
+
+.btn-cart {
+    margin-right: 40px;
+}
+.alert-head {
+    position: relative;
+}
+.alert-head img{
+    position: absolute;
+    right: 15px;
+    top:14px;
+}
+.table-striped > tbody > tr{
+    background-color: #ffffff;
+}
+.modal-header{
+    padding: 10px 15px;
+}
+.iconimg {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+.s-count{
+    display:-moz-inline-box;display:inline-block;width: 60px;text-align: center;
+}
+.increment{height: 20px;width: 20px;margin-left:8px;
+}
+
+.decrement{
+    height: 20px;width: 20px;
+}
+#dLabel{
+    background-color:#ffffff;width: 130px;
+}
+/* @media (max-width: @screen-xs-max) { */
+
+@media screen and (max-width: 767px) {
+    .nav-sign {
+        margin-top: 10px;
+    }
+    .left-box {
+        height: 20%;
+        border: 2px rgb(196, 124, 30) solid;
+    }
+    .right-box {
+        height: 82%;
+        border: 2px rgb(62, 197, 186) solid;
+    }
+    .dv-padding-r {
+        padding-right: 0px;
+    }
+    .left-input {
+        width: 60px;
+    }
+    .tab-group>ul>li {
+        width: 80px;
+    }
+    .left-btn {
+        width: 90px;
+    }
+    .shopping-cartt {
+        z-index: 11;
+        position: fixed;
+        right: 110px;
+        top: 15px;
+    }
+    .shopping-cartt>img {
+        height: 30px;
+        width: 30px;
+        transition: all 0.6s;
+    }
+    .shopping-cartt:hover {
+        height: 35px;
+        width: 35px;
+        cursor: pointer;
+        transform: scale(1.4);
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .left-input {
+        width: 80%;
+        height: 34px;
+    }
+    .dv-flex {
+        display: block;
+    }
+    .dropdown>button {
+        width: 80%;
+    }
+    .left-box-ch {
+        position: absolute;
+        left: 20%;
+    }
+    .left-btn {
+        width: 90%;
+        height: 40px;
+        vertical-align: middle;
+        text-align: center;
+    }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>login</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="logo col-lg-4 col-lg-offset-7">
+                <p>eMart login</p>
+            </div>
+        </div>
+        <div class="row w-content">
+            <div class="w-box col-lg-4 col-lg-offset-7 col-md-5 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                <div class="formTop">
+                    <h2>welcome login</h2>
+                </div>
+                <div class="formContent">
+                    <form #myForm="ngForm" [formGroup]="loginForm" novalidate (ngSubmit)="loginSubmit(myForm.value)">
+                        <div class="form-group">
+                            <label for="email"> Email address</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <input type="email" class="form-control" id="email" placeholder="Email" formControlName='email' required>
+                                <span class="glyphicon form-control-feedback w-asterisk" aria-hidden="false">*</span>
+                            </div>
+                            <div class="valia">
+                                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert-danger">
+                                    <div *ngIf="email.errors.required">
+                                        Email address is required.
+                                    </div>
+                                    <div *ngIf="email.errors.email">
+                                        Format should be wjw@do.com.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                <input type="password" class="form-control" id="password" placeholder="Password" formControlName='password' required>
+                                <span class="glyphicon form-control-feedback w-asterisk" aria-hidden="false">*</span>
+                            </div>
+                            <div class="valia">
+                                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert-danger valia">
+                                    <div *ngIf="password.errors.required">
+                                        Password address is required.
+                                    </div>
+                                    <div *ngIf="password.errors.minlength">
+                                        Password must be at least 6 characters long.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="loginbtn">
+                            <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+                        </div>
+                    </form>
+                    <div class="signup">
+                        <span>No account yet? Point &nbsp;</span>
+                        <a [routerLink]="['/signup']">Sign up</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="endBox">
+                <p class="mt-5 mb-3 text-muted">&copy; 2017-2020 11010802014853</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

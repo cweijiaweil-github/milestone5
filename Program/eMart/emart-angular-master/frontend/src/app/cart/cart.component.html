@@ -1,0 +1,53 @@
+
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header alert-head">
+            <div class="row">
+                <h3 class="modal-title col-xs-12" id="savemodaLabel">
+                    Shopping Cart
+                </h3>
+                <img class="iconimg" src="assets/icon/close.png" alt="" data-dismiss="modal">
+            </div>
+        </div>
+        <div class="modal-body">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th><input type="checkbox" (click)="chkallchange()" class="checkall" name="" id=""></th>
+                        <th>itemName</th>
+                        <th>price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cartItem of cartItems;index as i">
+                        <td>{{i+1}}</td>
+                        <td><input type="checkbox" (click)="chkwchange()" class="w-check" name="" id="{{cartItem.id}}"></td>
+                        <td>{{cartItem.item_name}}</td>
+                        <td>{{cartItem.price * cartItem.num_items}}</td>
+                        <td>
+                            <input class="nodisplay" #inputIndex tiype="text" value="{{i}}">
+                            <img (click)="increment($event,inputIndex.value)" class="iconimg increment"
+                                src="assets/icon/add.png" alt=""><span class="s-count">{{cartItem.num_items}}</span><img
+                                (click)="decrement($event,inputIndex.value)" class="iconimg decrement"
+                                src="assets/icon/sami.png" alt="">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="modal-footer">
+            <div class="leftdiv"><span>total piece:</span><span id="totaPiece">7</span><span>total
+                    price:</span><span id="totalPrice">88888</span></div>
+            <button (click)="delCarItems()" class="btn btn-primary btn-delete" type="button ">
+                Delete
+            </button>
+            <button (click)="checkOut()" class="btn btn-primary btn-checkout" data-dismiss="modal" id="confirm "
+                type="button ">
+                Checkout
+            </button>
+        </div>
+    </div>
+</div>

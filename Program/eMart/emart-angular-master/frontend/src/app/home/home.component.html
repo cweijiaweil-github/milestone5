@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row w-nav">
+        <div class="nav-logo" >
+            <p [ngStyle]="{color:emartcolor}" >eMart</p>
+        </div>
+        <div class="nav-sign">
+            <div class="nav-logout">
+                <!-- <a class="label">logout&nbsp;&nbsp;<img class="iconimg" src="assets/icon/user.png" alt=""></a> -->
+                <a [routerLink]="['']">logout&nbsp;&nbsp;<i class="glyphicon glyphicon-log-out"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="userCheck === 'buyer';else content">
+        <!-- buyer page -->
+        <app-buyer-master></app-buyer-master>
+    </div>
+    <ng-template #content>
+        <div *ngIf="userCheck === 'seller';else other_content">
+            <!-- seller page -->
+            <app-seller-master></app-seller-master>
+        </div>
+    </ng-template>
+    <ng-template #other_content>
+        <app-code404></app-code404>
+    </ng-template>
+</div>
